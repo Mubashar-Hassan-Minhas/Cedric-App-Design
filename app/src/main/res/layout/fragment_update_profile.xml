@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_update_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateProfileFragment">
+
+    <ScrollView
+        android:id="@+id/verticalScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/verticalScroll"
+            tools:ignore="MissingConstraints">
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayoutForCardView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        tools:ignore="MissingConstraints">-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewUpdateProfile"
+            style="@style/MyCardViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:outlineSpotShadowColor="@color/black"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayoutUpdateProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/updateImageCardView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="4dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/userImageFromGallery"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/profile" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Upload your profile image"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+<!--    </LinearLayout>-->
+
+
+
+
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Username"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardViewUpdateProfile"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutUsername"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:textColorHint="#858585"
+                app:boxCornerRadiusBottomEnd="45dp"
+                app:boxCornerRadiusBottomStart="45dp"
+                app:boxCornerRadiusTopEnd="45dp"
+                app:boxCornerRadiusTopStart="45dp"
+                app:boxStrokeColor="@color/edit_textbox_color"
+                app:boxStrokeWidth="2dp"
+                app:endIconTint="@color/yellow"
+                app:hintTextColor="@color/yellow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewUsername"
+                tools:ignore="MissingConstraints">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextUpdateUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutUsername"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:textColorHint="#858585"
+                app:boxCornerRadiusBottomEnd="45dp"
+                app:boxCornerRadiusBottomStart="45dp"
+                app:boxCornerRadiusTopEnd="45dp"
+                app:boxCornerRadiusTopStart="45dp"
+                app:boxStrokeColor="@color/edit_textbox_color"
+                app:boxStrokeWidth="2dp"
+                app:endIconTint="@color/yellow"
+                app:hintTextColor="@color/yellow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEmail"
+                tools:ignore="MissingConstraints">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextUpdateEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewDob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Age "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutDob"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:textColorHint="#858585"
+                app:boxCornerRadiusBottomEnd="45dp"
+                app:boxCornerRadiusBottomStart="45dp"
+                app:boxCornerRadiusTopEnd="45dp"
+                app:boxCornerRadiusTopStart="45dp"
+                app:boxStrokeColor="@color/edit_textbox_color"
+                app:boxStrokeWidth="2dp"
+                app:endIconTint="@color/yellow"
+                app:hintTextColor="@color/yellow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDob"
+                tools:ignore="MissingConstraints">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextUpdateAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayoutDob"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="46dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textViewHeightUpdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="56dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Height(ft/in)"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutDob"
+                        tools:ignore="MissingConstraints" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutHeightUpdate"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginEnd="32dp"
+                        android:textColorHint="#858585"
+                        app:boxCornerRadiusBottomEnd="45dp"
+                        app:boxCornerRadiusBottomStart="45dp"
+                        app:boxCornerRadiusTopEnd="45dp"
+                        app:boxCornerRadiusTopStart="45dp"
+                        app:boxStrokeColor="@color/edit_textbox_color"
+                        app:boxStrokeWidth="2dp"
+                        app:hintTextColor="@color/yellow"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewHeightUpdate"
+                        tools:ignore="MissingConstraints">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextHeightUpdate"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="16dp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/black"
+                            tools:ignore="MissingConstraints" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textViewWeightUpdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Weight(kg)"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/textViewHeightUpdate"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutDob"
+                        tools:ignore="MissingConstraints" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutWeightUpdate"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        android:textColorHint="#858585"
+                        app:boxCornerRadiusBottomEnd="45dp"
+                        app:boxCornerRadiusBottomStart="45dp"
+                        app:boxCornerRadiusTopEnd="45dp"
+                        app:boxCornerRadiusTopStart="45dp"
+                        app:boxStrokeColor="@color/edit_textbox_color"
+                        app:boxStrokeWidth="2dp"
+                        app:hintTextColor="@color/yellow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewWeightUpdate"
+                        tools:ignore="MissingConstraints">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextWeightUpdate"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            tools:ignore="MissingConstraints" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateProfileBtn"
+                android:layout_width="165dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="60dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/poppins_light"
+                android:padding="2dp"
+                android:text="Update Profile"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:cornerRadius="45dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutDob"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="MissingConstraints,NotSibling" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

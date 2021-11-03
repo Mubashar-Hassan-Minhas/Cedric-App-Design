@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nutrition_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Nutrition_Fragment"
+    tools:ignore="ScrollViewCount">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <ImageButton
+                android:id="@+id/backArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@drawable/back"
+                app:tint="@color/black" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textviewtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Cedric"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="32sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutNutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutTitle"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/nutritionImageCardView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/white"
+                app:strokeWidth="4dp">
+
+                <ImageView
+                    android:id="@+id/nutritionImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/butter"
+                    android:scaleType="centerCrop" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewNutritionName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingStart="8dp"
+
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <!--                    <LinearLayout-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:orientation="horizontal"-->
+                    <!--                        android:paddingStart="8dp">-->
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:paddingEnd="4dp"
+                        android:text="PREP:"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textViewPrepareTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_light"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                    <!--                    </LinearLayout>-->
+
+                    <!--                    <LinearLayout-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginStart="16dp"-->
+                    <!--                        android:orientation="horizontal">-->
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textViewCook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:paddingEnd="4dp"
+                        android:text="Cook:"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textViewCookStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_light"
+
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                    <!--                    </LinearLayout>-->
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingBottom="4dp"
+            android:text="Method"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutNutrition"
+            tools:ignore="MissingConstraints" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/methodCardView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewMethod"
+            tools:ignore="MissingConstraints">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/methodRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical"
+                android:padding="16dp" />
+
+
+            <!--            <LinearLayout-->
+            <!--                android:id="@+id/linearLayoutMethod"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="10dp"-->
+            <!--                android:orientation="vertical"-->
+            <!--                android:padding="16dp"-->
+            <!--                android:paddingBottom="6dp"-->
+            <!--                tools:ignore="DuplicateIds,MissingConstraints">-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:id="@+id/linearLayoutMethod1"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                    <com.google.android.material.card.MaterialCardView-->
+            <!--                        android:id="@+id/method1CardView"-->
+            <!--                        android:layout_width="40dp"-->
+            <!--                        android:layout_height="40dp"-->
+            <!--                        app:cardBackgroundColor="@color/yellow"-->
+            <!--                        app:cardCornerRadius="20dp"-->
+            <!--                        app:cardElevation="2dp">-->
+
+            <!--                        <com.google.android.material.textview.MaterialTextView-->
+            <!--                            android:id="@+id/textViewSerialNo1"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="30dp"-->
+            <!--                            android:layout_gravity="center_vertical"-->
+            <!--                            android:fontFamily="@font/poppins_bold"-->
+            <!--                            android:paddingStart="16dp"-->
+            <!--                            android:paddingTop="6dp"-->
+            <!--                            android:text="1"-->
+            <!--                            android:textColor="@color/black"-->
+            <!--                            android:textSize="12dp" />-->
+
+
+            <!--                    </com.google.android.material.card.MaterialCardView>-->
+
+            <!--                    <com.google.android.material.textview.MaterialTextView-->
+            <!--                        android:id="@+id/textViewmethod1"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_gravity="center_vertical"-->
+            <!--                        android:fontFamily="@font/montserrat_light"-->
+            <!--                        android:paddingStart="8dp"-->
+            <!--                        android:text="Lorem ipsum, or lipsum as it is sometimes known,-->
+            <!--is dummy text used in laying out print, graphic-->
+            <!--or web designs."-->
+            <!--                        android:textColor="@color/black"-->
+            <!--                        android:textSize="10sp" />-->
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:id="@+id/linearLayoutForAfternoon"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="12dp"-->
+            <!--                    android:orientation="horizontal"-->
+            <!--                    android:paddingTop="4dp">-->
+
+            <!--                    <com.google.android.material.card.MaterialCardView-->
+            <!--                        android:id="@+id/method2CardView"-->
+            <!--                        android:layout_width="40dp"-->
+            <!--                        android:layout_height="40dp"-->
+            <!--                        app:cardBackgroundColor="@color/yellow"-->
+            <!--                        app:cardCornerRadius="20dp"-->
+            <!--                        app:cardElevation="2dp">-->
+
+            <!--                        <com.google.android.material.textview.MaterialTextView-->
+            <!--                            android:id="@+id/textViewSerialNo1"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="30dp"-->
+            <!--                            android:layout_gravity="center_vertical"-->
+            <!--                            android:fontFamily="@font/poppins_bold"-->
+            <!--                            android:paddingStart="16dp"-->
+            <!--                            android:paddingTop="6dp"-->
+            <!--                            android:text="2"-->
+            <!--                            android:textColor="@color/black"-->
+            <!--                            android:textSize="12dp" />-->
+
+
+            <!--                    </com.google.android.material.card.MaterialCardView>-->
+
+            <!--                    <com.google.android.material.textview.MaterialTextView-->
+            <!--                        android:id="@+id/textViewmethod2"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_gravity="center_vertical"-->
+            <!--                        android:fontFamily="@font/montserrat_light"-->
+            <!--                        android:paddingStart="8dp"-->
+            <!--                        android:text="Lorem ipsum, or lipsum as it is sometimes known,-->
+            <!--is dummy text used in laying out print, graphic-->
+            <!--or web designs."-->
+            <!--                        android:textColor="@color/black"-->
+            <!--                        android:textSize="10sp" />-->
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:id="@+id/linearLayoutForNight"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="12dp"-->
+            <!--                    android:orientation="horizontal"-->
+            <!--                    android:paddingTop="4dp">-->
+
+            <!--                    <com.google.android.material.card.MaterialCardView-->
+            <!--                        android:id="@+id/method3CardView"-->
+            <!--                        android:layout_width="40dp"-->
+            <!--                        android:layout_height="40dp"-->
+            <!--                        app:cardBackgroundColor="@color/yellow"-->
+            <!--                        app:cardCornerRadius="20dp"-->
+            <!--                        app:cardElevation="2dp">-->
+
+            <!--                        <com.google.android.material.textview.MaterialTextView-->
+            <!--                            android:id="@+id/textViewSerialNo1"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="30dp"-->
+            <!--                            android:layout_gravity="center_vertical"-->
+            <!--                            android:fontFamily="@font/poppins_bold"-->
+            <!--                            android:paddingStart="16dp"-->
+            <!--                            android:paddingTop="6dp"-->
+            <!--                            android:text="3"-->
+            <!--                            android:textColor="@color/black"-->
+            <!--                            android:textSize="12dp" />-->
+
+
+            <!--                    </com.google.android.material.card.MaterialCardView>-->
+
+            <!--                    <com.google.android.material.textview.MaterialTextView-->
+            <!--                        android:id="@+id/textViewMethod3"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_gravity="center_vertical"-->
+            <!--                        android:fontFamily="@font/montserrat_light"-->
+            <!--                        android:paddingStart="8dp"-->
+            <!--                        android:text="Lorem ipsum, or lipsum as it is sometimes known,-->
+            <!--is dummy text used in laying out print, graphic-->
+            <!--or web designs."-->
+            <!--                        android:textColor="@color/black"-->
+            <!--                        android:textSize="10sp" />-->
+            <!--                </LinearLayout>-->
+
+            <!--            </LinearLayout>-->
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/IngridentsCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/methodCardView"
+            tools:ignore="MissingConstraints">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewIngredients"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Ingredients"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Quantity"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewFat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Fats"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewKcal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Kcal"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewProteins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Proteins"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewCarbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/carbs"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ingredientsRecyclerview"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+<!--            <TableLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/tableLayoutTitleItems"-->
+<!--                android:padding="20dp">-->
+
+<!--                <TableRow>-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_bold"-->
+<!--                        android:id="@+id/textViewIngredients"-->
+<!--                        android:text="Ingredients"-->
+<!--                        android:textColor="@color/black"/>-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_bold"-->
+<!--                      android:id="@+id/ingredientNo1"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_bold"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:id="@+id/ingredientNo2"-->
+
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/ingredientNo3"-->
+<!--                        android:fontFamily="@font/montserrat_bold"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="Fat Milk"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/ingredientNo4"-->
+<!--                        android:fontFamily="@font/montserrat_bold"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="Oat"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat,RtlHardcoded" />-->
+<!--                </TableRow>-->
+
+<!--                <TableRow android:layout_marginTop="10dp">-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_bold"-->
+<!--                        android:id="@+id/textViewQuantity"-->
+<!--                        android:text="Quantity"-->
+<!--                        android:textColor="@color/black" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred1Qnty"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="110g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred2Qnty"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred3Qnty"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="200g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred4Qnty"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="35g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat,RtlHardcoded" />-->
+<!--                </TableRow>-->
+
+<!--                <TableRow android:layout_marginTop="10dp">-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_bold"-->
+<!--                        android:id="@+id/textViewFat"-->
+<!--                        android:text="Fats"-->
+<!--                        android:textColor="@color/black" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred1Fats"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="0g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred2Fats"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="0.1g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred3Fats"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="6g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred4Fats"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="2.4g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat,RtlHardcoded" />-->
+<!--                </TableRow>-->
+
+<!--                <TableRow android:layout_marginTop="10dp">-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_bold"-->
+<!--                        android:id="@+id/textViewKcal"-->
+<!--                        android:text="Kcal"-->
+<!--                        android:textColor="@color/black" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred1Kcal"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred2Kcal"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="95g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred3Kcal"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="120g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:id="@+id/ingred4Kcal"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat,RtlHardcoded" />-->
+<!--                </TableRow>-->
+
+<!--                <TableRow android:layout_marginTop="10dp">-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_bold"-->
+<!--                        android:id="@+id/textViewProteins"-->
+<!--                        android:text="Proteins"-->
+<!--                        android:textColor="@color/black" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/ingred1Proteins"-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="0g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/ingred2Proteins"-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="1.1g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/ingred3Proteins"-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="7g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/ingred4Proteins"-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="3.3g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat,RtlHardcoded" />-->
+<!--                </TableRow>-->
+
+<!--                <TableRow android:layout_marginTop="10dp">-->
+
+<!--                    <TextView-->
+<!--                        android:fontFamily="@font/montserrat_bold"-->
+<!--                        android:id="@+id/textViewCarbs"-->
+<!--                        android:text="@string/carbs"-->
+<!--                        android:textColor="@color/black" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/ingred1Carbs"-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="11.6g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/ingred2Carbs"-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="21.3g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/ingred3Carbs"-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/ingred4Carbs"-->
+<!--                        android:fontFamily="@font/montserrat_light"-->
+<!--                        android:gravity="right"-->
+<!--                        android:paddingEnd="10dp"-->
+<!--                        android:text="22.4g"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        tools:ignore="RtlCompat,RtlHardcoded" />-->
+<!--                </TableRow>-->
+<!--            </TableLayout>-->
+
+
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddToShoppingList"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="60dp"
+            android:backgroundTint="@color/yellow"
+            android:fontFamily="@font/poppins_light"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Add to shopping List"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:cornerRadius="45dp"
+            app:flow_verticalAlign="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/IngridentsCardView"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

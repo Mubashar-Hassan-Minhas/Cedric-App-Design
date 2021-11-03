@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name" translatable="false">library</string>
+    <string name="today">Today</string>
+</resources>

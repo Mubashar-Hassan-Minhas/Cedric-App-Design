@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
+    tools:context=".FitnessLevelActivity">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewFitnessLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginTop="120dp"
+        android:text="What's your current fitness level?"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewBeginner"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/textview_outline_style"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingStart="24dp"
+        android:text="Beginner"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFitnessLevel" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewIntermediate"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/textview_outline_style"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingStart="24dp"
+        android:text="Intermediate"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBeginner"
+        tools:ignore="RtlSymmetry" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewAdvance"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/textview_outline_style"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingStart="24dp"
+        android:gravity="center_vertical"
+        android:text="Advanced"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIntermediate" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnFitnessNext"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="140dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/poppins_light"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:cornerRadius="45dp"
+        app:flow_verticalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAdvance"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

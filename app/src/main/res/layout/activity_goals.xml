@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
+    tools:context=".GoalsActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewGoals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="What's your Goal?"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewLoseWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Lose Weight"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGoals"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewLoseWeightSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/textview_outline_style"
+        android:fontFamily="@font/montserrat_medium"
+        android:paddingStart="18dp"
+        android:text="Get leaner and improve Your fitness"
+        android:gravity="center_vertical"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLoseWeight"
+        tools:ignore="RtlSymmetry" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewBuildMuscles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Build Muscles"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLoseWeightSubtitle"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewBuildMusclesSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/textview_outline_style"
+        android:fontFamily="@font/montserrat_medium"
+        android:paddingStart="18dp"
+        android:gravity="center_vertical"
+        android:textSize="12sp"
+        android:text="Build your strength &amp; muscles"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBuildMuscles"
+        tools:ignore="RtlSymmetry" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewFittedAndToned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Get fitted &amp; toned"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBuildMusclesSubtitle"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewFittedAndTonedSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/textview_outline_style"
+        android:fontFamily="@font/montserrat_medium"
+        android:paddingStart="18dp"
+        android:gravity="center_vertical"
+        android:textSize="12sp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Eat &amp; train for optimum health"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFittedAndToned"
+        tools:ignore="RtlSymmetry" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGoalsNext"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="140dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:cornerRadius="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFittedAndTonedSubtitle"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

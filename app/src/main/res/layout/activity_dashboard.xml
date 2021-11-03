@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard">
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/constraintLayout1"-->
+<!--        tools:ignore="MissingConstraints">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearlayoutMain"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutForHello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textviewUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Hello James"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewWelcoming"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Good Morning!"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/profilePhotoCardView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/linearLayoutForHello"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/white"
+            app:strokeWidth="2dp"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/Avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile" />
+        </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/verticalScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout1"
+            android:scrollbars="none"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/verticalScroll"
+                tools:ignore="MissingConstraints">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewCoaches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:paddingBottom="4dp"
+                    android:text="Coaches"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linear1"
+                    tools:ignore="MissingConstraints" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewForCoaches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/recyclerview_style"
+                    android:elevation="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewCoaches"
+                    tools:ignore="MissingConstraints" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewCalm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:paddingBottom="4dp"
+                    android:text="Calm"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerviewForCoaches"
+                    tools:ignore="MissingConstraints" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/calmCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardBackgroundColor="#fff"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewCalm"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/sleepVisualCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="10dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="4dp"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="2dp">
+
+                        <ImageView
+                            android:id="@+id/imageSleepVisualization"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/sleep_visualization" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textView1SleepViewCard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="70dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="@string/sleep_visualization"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textView2SleepViewCard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="85dp"
+                            android:fontFamily="@font/montserrat_light"
+                            android:paddingTop="2dp"
+                            android:text="Journey to stars"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayoutForMAEView"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="140dp"
+                        android:orientation="vertical"
+                        android:paddingBottom="6dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutForMorning"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/morningImageCardView"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="2dp"
+                                app:strokeColor="@color/white"
+                                app:strokeWidth="2dp">
+
+                                <ImageView
+                                    android:id="@+id/imageMorning"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/morning" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textViewMorning"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:paddingStart="8dp"
+                                android:text="Morning"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/linearLayoutForAfternoon"
+                            android:paddingTop="4dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/afternoonImageCardView"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="2dp"
+                                app:strokeColor="@color/white"
+                                app:strokeWidth="2dp">
+
+                                <ImageView
+                                    android:id="@+id/imageAfternoon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/afternoon" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:paddingStart="8dp"
+                                android:text="Afternoon"
+                                android:id="@+id/textViewAfternoon"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/linearLayoutForNight"
+                            android:paddingTop="4dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/nightImageCardView"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="2dp"
+                                app:strokeColor="@color/white"
+                                app:strokeWidth="2dp">
+
+                                <ImageView
+                                    android:id="@+id/imageNight"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/night" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:paddingStart="8dp"
+                                android:text="Night"
+                                android:id="@+id/textViewNight"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewNutrition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:paddingBottom="4dp"
+                    android:text="Nutritions"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calmCardView"
+                    tools:ignore="MissingConstraints" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="60dp"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/breakfastCardView"
+                        android:layout_width="160dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="16dp"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textViewNutrition"
+                        tools:ignore="MissingConstraints">
+
+                        <ImageView
+                            android:id="@+id/imageBreakfast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="TODO"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/breakfast" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textViewBreakfastViewCard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="90dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="Breakfast"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/LunchCardView"
+                            android:layout_width="160dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="15dp"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/breakfastCardView"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewNutrition"
+                            tools:ignore="MissingConstraints">
+
+                            <ImageView
+                                android:id="@+id/imageLunch"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/breakfast" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/textViewLunchViewCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="30dp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:text="Lunch"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/DinnerCardView"
+                            android:layout_width="160dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="15dp"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/breakfastCardView"
+                            app:layout_constraintTop_toBottomOf="@+id/LunchCardView"
+                            tools:ignore="MissingConstraints">
+
+                            <ImageView
+                                android:id="@+id/imageDinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/breakfast" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/textViewDinnerViewCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="30dp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:text="Dinner"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/fragmentContainer0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <FrameLayout
+        android:id="@+id/fragmentContainer1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <FrameLayout
+        android:id="@+id/fragmentContainerNutrition"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <FrameLayout
+        android:id="@+id/fragmentContainerProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/navigation_container"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        tools:ignore="MissingConstraints">-->
+
+<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--            android:id="@+id/navigationView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            app:elevation="4dp"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:background="@drawable/bottom_navigation_background"-->
+<!--            android:clipChildren="false"-->
+<!--            app:itemIconTint="@drawable/bottom_navbar_color"-->
+<!--            app:itemTextColor="@drawable/bottom_navbar_color"-->
+<!--            app:labelVisibilityMode="unlabeled"-->
+<!--            app:menu="@menu/navigation"-->
+<!--            tools:ignore="ObsoleteLayoutParam">-->
+<!--        </com.google.android.material.bottomnavigation.BottomNavigationView>-->
+
+<!--    </FrameLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

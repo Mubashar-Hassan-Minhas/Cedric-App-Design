@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Cedric App</string>
+    <string name="cedric_title" tools:ignore="MissingTranslation">Cedric</string>
+    <string name="password" translatable="false"><b>Password</b></string>
+    <string name="username_or_email" translatable="false"><b>Username or email</b></string>
+    <string name="confirm_password" translatable="false"><b>Confirm Password</b></string>
+    <string name="cedric" translatable="false">Cedric</string>
+    <string name="email_error" translatable="false">Please enter an email address</string>
+    <string name="username_error" translatable="false">Please enter username</string>
+    <string name="error_invalid_email" translatable="false">Email is not valid</string>
+    <string name="password_error" translatable="false">Please enter  password</string>
+    <string name="name_error" translatable="false">Username must not be empty</string>
+    <string name="error_weak_password" translatable="false">Your  password is  too weak</string>
+    <string name="error_medium_password" translatable="false">Your password strength is medium</string>
+    <string name="error_match_password" translatable="false">Password did not match</string>
+    <string name="Age_error" translatable="false">Please enter your age!</string>
+    <string name="height_error" translatable="false">Please enter your height</string>
+    <string name="weight_error" translatable="false">Please enter your weight!</string>
+    <string name="gender_error" translatable="false">Please select your gender!</string>
+    <string name="name_email_error" translatable="false">Please enter username or email.</string>
+    <string name="sleep_visualization" translatable="false">Sleep Visualization</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="carbs" translatable="false">Carbs</string>
+    <string name="cardType_error" translatable="false">please select your card type!</string>
+    <string name="Cvv_error" translatable="false">Please enter your card cvv code!</string>
+    <string name="card_error" translatable="false">Please enter your card number!</string>
+    <string name="date_error" translatable="false">Please enter expire date of your card!</string>
+    <string name="username" translatable="false">Username</string>
+    <string name="email" translatable="false">Email</string>
+</resources>

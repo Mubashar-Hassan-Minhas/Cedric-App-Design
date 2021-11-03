@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".InformationActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Information"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutGender"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="32dp"
+       app:hintEnabled="false"
+        app:boxCornerRadiusBottomEnd="45dp"
+        app:boxCornerRadiusBottomStart="45dp"
+        app:boxCornerRadiusTopEnd="45dp"
+        app:boxCornerRadiusTopStart="45dp"
+        app:boxStrokeColor="@color/edit_textbox_color"
+        app:boxStrokeWidth="2dp"
+        app:endIconTint="#FFC153"
+        app:hintTextColor="@color/yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInformation"
+        tools:ignore="MissingConstraints">
+
+        <AutoCompleteTextView
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/sex"
+            android:drawablePadding="16dp"
+            android:hint="Gender"
+            android:textColorHint="#727272"
+            android:fontFamily="@font/montserrat_medium"
+            android:inputType="textNoSuggestions"
+            android:textColor="@color/yellow" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutHeight"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        app:hintEnabled="false"
+        app:endIconTint="@color/yellow"
+        app:boxCornerRadiusBottomEnd="45dp"
+        app:boxCornerRadiusBottomStart="45dp"
+        app:boxCornerRadiusTopEnd="45dp"
+        app:boxCornerRadiusTopStart="45dp"
+        app:boxStrokeColor="@color/edit_textbox_color"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="@color/yellow"
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayoutWeight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutGender"
+
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextHeight"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/height"
+            android:drawablePadding="16dp"
+            android:hint="Height"
+            android:textColorHint="#727272"
+            android:fontFamily="@font/montserrat_medium"
+            android:inputType="numberDecimal"
+            android:numeric="decimal"
+            android:textColor="@color/yellow"
+            tools:ignore="Deprecated,MissingConstraints" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/outlinedTextField"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:boxStrokeWidth="2dp"-->
+<!--        app:hintTextColor="@color/yellow"-->
+<!--        android:textColorHint="#858585"-->
+<!--        -->
+<!--        app:boxCornerRadiusBottomEnd="40dp"-->
+<!--        app:boxCornerRadiusBottomStart="40dp"-->
+<!--        app:boxCornerRadiusTopEnd="40dp"-->
+<!--        app:boxCornerRadiusTopStart="40dp"-->
+<!--        android:hint="Label"-->
+<!--        app:boxStrokeColor="@color/edit_textbox_color"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutAge"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--        tools:ignore="MissingConstraints">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutWeight"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+       app:hintEnabled="false"
+        app:boxCornerRadiusBottomEnd="45dp"
+        app:boxCornerRadiusBottomStart="45dp"
+        app:boxCornerRadiusTopEnd="45dp"
+        app:boxCornerRadiusTopStart="45dp"
+        app:boxStrokeColor="@color/edit_textbox_color"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="@color/yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutGender"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextWeight"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/weight"
+            android:drawablePadding="16dp"
+            android:hint="Weight"
+            android:textColorHint="#727272"
+            android:fontFamily="@font/montserrat_medium"
+            android:inputType="number"
+            android:textColor="@color/yellow"
+            tools:ignore="MissingConstraints" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutAge"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        app:hintEnabled="false"
+        app:boxCornerRadiusBottomEnd="45dp"
+        app:boxCornerRadiusBottomStart="45dp"
+        app:boxCornerRadiusTopEnd="45dp"
+        app:boxCornerRadiusTopStart="45dp"
+        app:boxStrokeColor="@color/edit_textbox_color"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="@color/yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutHeight"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/age"
+            android:drawablePadding="16dp"
+            android:hint="Age"
+            android:textColorHint="#727272"
+            android:fontFamily="@font/montserrat_medium"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/yellow" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnInformationNext"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="140dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/poppins_light"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:cornerRadius="45dp"
+        app:flow_verticalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutAge"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

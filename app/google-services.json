@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "24571724260",
+    "firebase_url": "https://cedric-8cb7d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "cedric-8cb7d",
+    "storage_bucket": "cedric-8cb7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24571724260:android:0def1e1c9fca33087587f1",
+        "android_client_info": {
+          "package_name": "com.techozon.cedricfinalappdesign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24571724260-4jdl8134rgd29kg95pfi90n97bpp0hum.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxfoeGxPZTs9VWk4mQnvH7Xy9XbKZOeIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24571724260-4jdl8134rgd29kg95pfi90n97bpp0hum.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "24571724260-qf1hg8v7uj5k4odc8i6o9le1drm6tki5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Techozon.Cedric"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

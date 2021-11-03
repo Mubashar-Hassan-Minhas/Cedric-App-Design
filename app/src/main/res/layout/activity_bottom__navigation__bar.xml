@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Bottom_Navigation_Bar">
+
+    <FrameLayout
+        android:id="@+id/navigation_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:elevation="4dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bottom_navigation_background"
+            android:clipChildren="false"
+            app:itemIconTint="@drawable/bottom_navbar_color"
+            app:itemTextColor="@drawable/bottom_navbar_color"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/navigation"
+            tools:ignore="ObsoleteLayoutParam">
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
