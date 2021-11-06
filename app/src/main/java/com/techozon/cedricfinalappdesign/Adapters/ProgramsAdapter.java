@@ -17,6 +17,7 @@ import com.techozon.cedricfinalappdesign.Model.ProgramsDataModel;
 import com.techozon.cedricfinalappdesign.ProgressFragment;
 import com.techozon.cedricfinalappdesign.R;
 import com.google.android.material.textview.MaterialTextView;
+import com.techozon.cedricfinalappdesign.SharedData;
 
 import java.util.List;
 
@@ -79,26 +80,35 @@ public class ProgramsAdapter extends RecyclerView.Adapter<ProgramsAdapter.MyView
     public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
 
         ProgramsDataModel uploadCurrent = programsList.get(listPosition);
+        System.out.println(uploadCurrent +"programs Data");
 
         holder.programName.setText(uploadCurrent.getName());
+        System.out.println(uploadCurrent.name +"program name");
        // holder.plan.setText(uploadCurrent.getPlan());
         Glide.with(context).asBitmap().load(uploadCurrent.getThumbnail()).into(holder.programImage);
-        String programId= String.valueOf(uploadCurrent.getProgramId());
-        String totalWeeks=uploadCurrent.getTotalWeeks();
+
+
+
 
         holder.programImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ProgramName = holder.programName.getText().toString();
+                SharedData.bestProgramId=uploadCurrent.getProgramId();
+                System.out.println(SharedData.bestProgramId +"pId");
+                SharedData.programName=uploadCurrent.getName();
+
+
 
                 Fragment fragment = new ProgressFragment();
                 FragmentTransaction mFragmentTransaction = ((FragmentActivity)context)
                         .getSupportFragmentManager().beginTransaction();
 
                 Bundle bundle = new Bundle();
-               // bundle.putString("profileImage", uploadCurrent.getProgram_img());
-                //System.out.println(uploadCurrent.getProgram_img()+";;;;;;;;;;;;;;;;;;;;;;");
+
                 bundle.putString("ProgramName", uploadCurrent.getName()); //key and value
+                bundle.putString("ProgramId", String.valueOf(uploadCurrent.getProgramId()));
+                bundle.putString("noOfWeeks", (uploadCurrent.getTotalWeeks()));
                 //bundle.putString("id",post_key);
                 fragment.setArguments(bundle);
                 mFragmentTransaction.replace(R.id.navigation_container, fragment);

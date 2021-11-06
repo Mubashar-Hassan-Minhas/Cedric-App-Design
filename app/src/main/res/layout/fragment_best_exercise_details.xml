@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bestExerciseDetailsFragment"
+    tools:context=".BestExerciseDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <VideoView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:id="@+id/videoPlayer"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:keepScreenOn="true"/>
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/appCompatImageView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="350dp"-->
+        <!--            android:scaleType="fitXY"-->
+        <!--            android:src="@drawable/shoulder"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.0"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            tools:ignore="MissingConstraints" >-->
+        <!--        </androidx.appcompat.widget.AppCompatImageView>-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/backArrow"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="128dp"-->
+        <!--            android:elevation="4dp"-->
+        <!--            android:contentDescription="TODO"-->
+        <!--            android:src="@drawable/play_button"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.498"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            tools:ignore="MissingConstraints" />-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewExerciseDetails"
+            style="@style/MyCardView"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_marginTop="280dp"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewExerciseName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Shoulder Rotation"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textSize="26dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewExerciseDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Description"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewExerciseDescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Lorem ipsum, or lipsum as it is sometimes known,is dummy text used in laying out print, graphic or web designs.The passage is attributed to an
+unknown typesetter in the 15th century who is thought to have scrambled parts"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNextWorkout"
+                android:layout_width="220dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="70dp"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="Next Workout"
+                android:textAllCaps="false"
+                android:textColor="#1B1B1B"
+                android:textSize="18sp"
+                app:cornerRadius="45dp"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/container"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        tools:ignore="MissingConstraints">-->
+
+    <!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--            android:id="@+id/navigationView"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="bottom"-->
+    <!--            android:background="@drawable/bottom_navigation_background"-->
+    <!--            app:itemIconTint="@drawable/bottom_navbar_color"-->
+    <!--            app:itemTextColor="@drawable/bottom_navbar_color"-->
+    <!--            app:labelVisibilityMode="unlabeled"-->
+    <!--            android:clipChildren="false"-->
+    <!--            android:layout_alignParentBottom="true"-->
+    <!--            app:menu="@menu/navigation"-->
+    <!--            tools:ignore="ObsoleteLayoutParam">-->
+    <!--        </com.google.android.material.bottomnavigation.BottomNavigationView>-->
+
+    <!--    </FrameLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,16 +15,17 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewProgramName"
-        android:layout_width="wrap_content"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="65dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Massive Upper\nBody"
-        app:textAllCaps="true"
+        android:maxLines="2"
+        android:text="Massive Upper Body"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:textAllCaps="true" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewProgramPlan"
@@ -38,6 +39,6 @@
         android:textAllCaps="false"
         android:layout_gravity="end"
         android:textColor="@color/white"
-        android:textSize="12sp" />
+        android:textSize="12sp"/>
 
 </com.google.android.material.card.MaterialCardView>

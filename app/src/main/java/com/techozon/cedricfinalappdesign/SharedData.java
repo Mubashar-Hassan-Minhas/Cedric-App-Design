@@ -21,6 +21,9 @@ public class SharedData {
     public static String imageUrl="oooo";
     public static  Integer coachId;
     public static  Integer warmupId;
+    public static String programName;
+    public static int programId;
+    public static int bestProgramId;
 
 
     public static void setWelcomeMessage(TextView mTextWelcome) {

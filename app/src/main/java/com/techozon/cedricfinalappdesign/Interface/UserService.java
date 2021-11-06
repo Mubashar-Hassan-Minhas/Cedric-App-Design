@@ -1,11 +1,13 @@
 package com.techozon.cedricfinalappdesign.Interface;
 
 import com.techozon.cedricfinalappdesign.LoginResponse;
+import com.techozon.cedricfinalappdesign.Model.BestProgramModel;
 import com.techozon.cedricfinalappdesign.Model.CoachesDataModel;
 import com.techozon.cedricfinalappdesign.Model.NutritionDataModel;
 import com.techozon.cedricfinalappdesign.Model.PlansDataModel;
 import com.techozon.cedricfinalappdesign.Model.ProfileActivationResponse;
 import com.techozon.cedricfinalappdesign.Model.ProgramsDataModel;
+import com.techozon.cedricfinalappdesign.Model.ProgressDataModel;
 import com.techozon.cedricfinalappdesign.Model.UpdateProfileModel;
 import com.techozon.cedricfinalappdesign.Model.VisualizationResponse;
 import com.techozon.cedricfinalappdesign.SignupResponse;
@@ -75,6 +77,12 @@ public interface UserService {
 
 
     //get Programs
-    @GET("packages")
+    @GET("programInformation")
     Call<ArrayList<ProgramsDataModel>> getAllPrograms();
+
+//Programs Progress
+    @POST("programInformation/getData")
+        //on below line we are creating a method to post our data.
+    Call<BestProgramModel> programProgressDataPost(
+            @Query("programId") Integer programId,@Query("week") Integer week,@Query("day") String day);
 }

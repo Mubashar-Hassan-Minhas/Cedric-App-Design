@@ -16,7 +16,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.techozon.cedricfinalappdesign.BestExerciseDetailsFragment;
 import com.techozon.cedricfinalappdesign.ExerciseDetailsFragment;
+import com.techozon.cedricfinalappdesign.Model.BestProgramModel;
 import com.techozon.cedricfinalappdesign.Model.BestProgramWorkoutModel;
 import com.techozon.cedricfinalappdesign.R;
 import com.google.android.material.textview.MaterialTextView;
@@ -27,20 +29,20 @@ public class BestProgramWorkoutAdapter extends RecyclerView.Adapter<BestProgramW
 
     private Context context;
     String exercise, videoUrl;
-    private List<BestProgramWorkoutModel> mUploads;
+    private BestProgramModel mUploads;
     private ImageView imageThumbnail;
     private Bitmap bitmap;
+    private String exerciseVideo,exerciseDescription;
 
 
-    public BestProgramWorkoutAdapter(Context context, List<BestProgramWorkoutModel> uploads) {
+    public BestProgramWorkoutAdapter(Context context,BestProgramModel uploads) {
         this.context = context;
         mUploads = uploads;
     }
 
 
     @Override
-    public BestProgramWorkoutVideoHolder onCreateViewHolder(ViewGroup
-                                                         viewGroup, int i) {
+    public BestProgramWorkoutVideoHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
 
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.best_program_workout, viewGroup, false);
         return new BestProgramWorkoutVideoHolder(view);
@@ -48,15 +50,16 @@ public class BestProgramWorkoutAdapter extends RecyclerView.Adapter<BestProgramW
 
     @Override
     public void onBindViewHolder(@NonNull final BestProgramWorkoutVideoHolder workoutVideoHolder, int position) {
-        BestProgramWorkoutModel uploadCurrent = mUploads.get(position);
+        BestProgramModel uploadCurrent = mUploads;
 
 
-        workoutVideoHolder.txtFileName.setText(uploadCurrent.getTitle());
-        workoutVideoHolder.textVideoDuration.setText(uploadCurrent.getTime());
+        workoutVideoHolder.txtFileName.setText(uploadCurrent.workout.get(position).name);
+        workoutVideoHolder.textVideoDuration.setText(uploadCurrent.workout.get(position).duration);
         //videoUrl=uploadCurrent.getUrl();
-        Glide.with(context).load(uploadCurrent.getImgThumbnail()).into(workoutVideoHolder.imageThumbnail);
-        //Picasso.get().load(uploadCurrent.getImgThumbnail()).into(WorkoutVideoHolder.imageThumbnail);
-
+        Glide.with(context).load(uploadCurrent.workout.get(position).thumbnail).into(workoutVideoHolder.imageThumbnail);
+        //Picasso.get().load(uploadCurrent.getImgThumbnail()).into(videoHolder.imageThumbnail);
+        exerciseVideo = uploadCurrent.workout.get(position).videoUrl;
+        exerciseDescription = uploadCurrent.workout.get(position).description;
 
         try {
             // bitmap = uploadCurrent.getImgThumbnail();
@@ -74,12 +77,13 @@ public class BestProgramWorkoutAdapter extends RecyclerView.Adapter<BestProgramW
             @Override
             public void onClick(View v) {
                 exercise = workoutVideoHolder.txtFileName.getText().toString();
-                Fragment fragment = new ExerciseDetailsFragment();
+                Fragment fragment = new BestExerciseDetailsFragment();
                 FragmentTransaction mFragmentTransaction = ((FragmentActivity) context)
                         .getSupportFragmentManager().beginTransaction();
                 Bundle bundle = new Bundle();
-                bundle.putString("position", uploadCurrent.url);
-                bundle.putString("exercise", uploadCurrent.title); //key and value
+                bundle.putString("position", exerciseVideo);
+                bundle.putString("videoDescription", exerciseDescription);
+                bundle.putString("exercise",exercise); //key and value
                 fragment.setArguments(bundle);
                 mFragmentTransaction.replace(R.id.navigation_container, fragment);
                 mFragmentTransaction.addToBackStack(null);
@@ -92,10 +96,7 @@ public class BestProgramWorkoutAdapter extends RecyclerView.Adapter<BestProgramW
 
     @Override
     public int getItemCount() {
-        if (mUploads.size() > 0) {
-            return mUploads.size();
-        } else
-            return 1;
+        return mUploads.workout.size();
     }
 }
 

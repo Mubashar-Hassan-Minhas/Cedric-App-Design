@@ -89,7 +89,7 @@ public class ProgramsFragment extends Fragment {
         mProgramsRecyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         mProgramsRecyclerView.setLayoutManager(layoutManager);
-        programsList = new ArrayList<>();
+       // programsList = new ArrayList<>();
 
        
         

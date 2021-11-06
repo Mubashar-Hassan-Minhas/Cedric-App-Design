@@ -85,6 +85,7 @@ public class CoachesAdapter extends RecyclerView.Adapter<CoachesAdapter.MyViewHo
     public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
         CoachesDataModel uploadCurrent = dataArrayList.get(listPosition);
 
+
         MaterialTextView textViewName = (MaterialTextView) holder.name;
         textViewName.setText(uploadCurrent.name);
 

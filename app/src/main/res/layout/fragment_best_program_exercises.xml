@@ -114,7 +114,7 @@
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerviewBestWarmUp"
+        android:id="@+id/recyclerviewBestProgramWarmUp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewWarmUP"
         android:layout_width="match_parent"
@@ -126,7 +126,7 @@
         android:id="@+id/textViewWorkouts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerviewBestWarmUp"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerviewBestProgramWarmUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

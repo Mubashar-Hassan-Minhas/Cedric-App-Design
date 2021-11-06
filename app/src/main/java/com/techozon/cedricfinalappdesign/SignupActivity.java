@@ -154,6 +154,7 @@ public class SignupActivity extends AppCompatActivity {
                     try {
                         assert signupResponse != null;
                         status = signupResponse.getStatus();
+                        System.out.println(status +"status");
                         SharedData.id=signupResponse.getId();
                         SharedData.profileActivation=signupResponse.isProfileActivated;
                         System.out.println("hello"+SharedData.profileActivation);
@@ -166,7 +167,7 @@ public class SignupActivity extends AppCompatActivity {
                         System.out.println(id + "nnid");
                     }
 
-                    if (signupResponse.getStatus().equals("Users created Successfully")) {
+                    if (signupResponse.getStatus().equals("User created Successfully")) {
 
                         Intent intent = new Intent(SignupActivity.this, InformationActivity.class);
                         intent.putExtra("Email", email);

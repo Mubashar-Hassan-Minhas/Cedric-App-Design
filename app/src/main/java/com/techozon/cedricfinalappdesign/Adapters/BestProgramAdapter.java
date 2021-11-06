@@ -16,7 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import com.techozon.cedricfinalappdesign.BestExerciseDetailsFragment;
 import com.techozon.cedricfinalappdesign.ExerciseDetailsFragment;
+import com.techozon.cedricfinalappdesign.Model.BestProgramModel;
 import com.techozon.cedricfinalappdesign.R;
 import com.techozon.cedricfinalappdesign.Model.WarmupDataModel;
 import com.google.android.material.textview.MaterialTextView;
@@ -26,9 +28,10 @@ import java.util.List;
 public class BestProgramAdapter extends RecyclerView.Adapter<BestProgramAdapter.MyViewHolder> {
     private Context context;
     String exercise,videoUrl;
-    private List<WarmupDataModel> mUploads;
+    private BestProgramModel mUploads;
     private ImageView imageThumbnail;
     private Bitmap bitmap;
+    private String exerciseVideo,exerciseDescription;
 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -51,7 +54,7 @@ public class BestProgramAdapter extends RecyclerView.Adapter<BestProgramAdapter.
         }
     }
 
-    public  BestProgramAdapter(Context context, List<WarmupDataModel> uploads) {
+    public  BestProgramAdapter(Context context, BestProgramModel uploads) {
         this.context = context;
         mUploads = uploads;
     }
@@ -69,13 +72,16 @@ public class BestProgramAdapter extends RecyclerView.Adapter<BestProgramAdapter.
 
     @Override
     public void onBindViewHolder(final BestProgramAdapter.MyViewHolder holder, final int listPosition) {
-        WarmupDataModel uploadCurrent = mUploads.get(listPosition);
+        BestProgramModel uploadCurrent = mUploads;
 
-        holder.txtFileName.setText(uploadCurrent.getTitle());
-        holder.textVideoDuration.setText(uploadCurrent.getTime());
+        holder.txtFileName.setText(uploadCurrent.warmup.get(listPosition).name);
+        holder.textVideoDuration.setText(uploadCurrent.warmup.get(listPosition).duration);
         //videoUrl=uploadCurrent.getUrl();
-        Glide.with(context).load(uploadCurrent.getImgThumbnail()).into(holder.imageThumbnail);
+        Glide.with(context).load(uploadCurrent.warmup.get(listPosition).thumbnail).into(holder.imageThumbnail);
         //Picasso.get().load(uploadCurrent.getImgThumbnail()).into(videoHolder.imageThumbnail);
+        exerciseVideo = uploadCurrent.warmup.get(listPosition).videoUrl;
+        exerciseDescription = uploadCurrent.warmup.get(listPosition).description;
+
 
 
 
@@ -83,12 +89,14 @@ public class BestProgramAdapter extends RecyclerView.Adapter<BestProgramAdapter.
             @Override
             public void onClick(View v) {
                 exercise = holder.txtFileName.getText().toString();
-                Fragment fragment = new ExerciseDetailsFragment();
+
+                Fragment fragment = new BestExerciseDetailsFragment();
                 FragmentTransaction mFragmentTransaction = ((FragmentActivity)context)
                         .getSupportFragmentManager().beginTransaction();
                 Bundle bundle = new Bundle();
-                bundle.putString("position", uploadCurrent.url);
-                bundle.putString("exercise", uploadCurrent.title); //key and value
+                bundle.putString("position", exerciseVideo);
+                bundle.putString("videoDescription", exerciseDescription);
+                bundle.putString("exercise",exercise); //key and value
                 fragment.setArguments(bundle);
                 mFragmentTransaction.replace(R.id.navigation_container, fragment);
                 mFragmentTransaction.addToBackStack(null);
@@ -104,7 +112,7 @@ public class BestProgramAdapter extends RecyclerView.Adapter<BestProgramAdapter.
 
     @Override
     public int getItemCount() {
-        return mUploads.size();
+        return mUploads.warmup.size();
     }
 }
 

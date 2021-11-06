@@ -19,15 +19,14 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.techozon.cedricfinalappdesign.Adapters.ProgressAdapter;
-import com.techozon.cedricfinalappdesign.Model.ProgressDataModel;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textview.MaterialTextView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.techozon.cedricfinalappdesign.Adapters.ProgressAdapter;
+import com.techozon.cedricfinalappdesign.Model.ProgressDataModel;
 
 import java.util.ArrayList;
 
@@ -47,7 +46,9 @@ public class ProgressFragment extends Fragment {
     private ImageButton backArrow;
     MaterialCardView mCardViewDay1, mCardViewDay2, mCardViewDay3, mCardViewDay4,
             mCardViewDay5, mCardViewDay6, mCardViewDay7, mCardViewDay8;
-    private DatabaseReference mDatabaseReference;
+    //    private DatabaseReference mDatabaseReference;
+    String programId;
+    String totalWeeks;
 
 
     public ProgressFragment() {
@@ -71,8 +72,14 @@ public class ProgressFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        programId = getArguments().getString("ProgramId");
+        totalWeeks = getArguments().getString("noOfWeeks");
+        System.out.println(totalWeeks +"weeks");
+        System.out.println(programId +"ProgramId");
+
         progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
-       // myOnClickListener = new ProgressFragment.MyItemOnClickListener(this);
+        // myOnClickListener = new ProgressFragment.MyItemOnClickListener(this);
         mTextViewProgressbar = view.findViewById(R.id.text_view_progress);
         backArrow = view.findViewById(R.id.backArrow);
 
@@ -116,67 +123,74 @@ public class ProgressFragment extends Fragment {
         mProgressRecyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         mProgressRecyclerView.setLayoutManager(layoutManager);
-
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Cedric").child("Best Programs");
-        mDatabaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    String uid = postSnapshot.getKey();
-                    System.out.println(uid + "=====om======[[[[]]]]]");
-
-                    for (DataSnapshot subSnapshot : postSnapshot.getChildren()) {
-                        String vid = subSnapshot.getKey();
-                        System.out.println(vid + "=====8m======[[[[]]]]]");
-                        if (vid.equals("Massive Upper Body")) {
-
-                            for (DataSnapshot ssubSnapshot : subSnapshot.getChildren()) {
-                                String cid = subSnapshot.getKey();
-                                System.out.println(cid + "=====cm======[[[[]]]]]");
-
-                                ProgressDataModel upload = ssubSnapshot.getValue(ProgressDataModel.class);
-                                System.out.println(subSnapshot + "pklpkpkpkppkkpkpp");
-                                weekWiseList.add(upload);
-
-                            }
-                            adapter = new ProgressAdapter(getContext(), weekWiseList);
-                            mProgressRecyclerView.setAdapter(adapter);
-                            weekWiseList = new ArrayList<>();
-                        }
-                    }
-
-                }
+        programProgress();
 
 
-//                    else {
-//                        Toast.makeText(getContext(), "No Videos Available", Toast.LENGTH_LONG).show();
-//                        System.out.println("not working...");
+//        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Cedric").child("Best Programs");
+//        mDatabaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+//                    String uid = postSnapshot.getKey();
+//                    System.out.println(uid + "=====om======[[[[]]]]]");
+//
+//                    for (DataSnapshot subSnapshot : postSnapshot.getChildren()) {
+//                        String vid = subSnapshot.getKey();
+//                        System.out.println(vid + "=====8m======[[[[]]]]]");
+//                        if (vid.equals("Massive Upper Body")) {
+//
+//                            for (DataSnapshot ssubSnapshot : subSnapshot.getChildren()) {
+//                                String cid = subSnapshot.getKey();
+//                                System.out.println(cid + "=====cm======[[[[]]]]]");
+//
+//                                ProgressDataModel upload = ssubSnapshot.getValue(ProgressDataModel.class);
+//                                System.out.println(subSnapshot + "pklpkpkpkppkkpkpp");
+//                                weekWiseList.add(upload);
+//
+//                            }
+//                            adapter = new ProgressAdapter(getContext(), weekWiseList);
+//                            mProgressRecyclerView.setAdapter(adapter);
+//                            weekWiseList = new ArrayList<>();
+//                        }
 //                    }
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-
-
-            }
-        });
 //
-//        //   Populate data of first horizontal cardview
-//        weekWiseList = new ArrayList<ProgressDataModel>();
-//        for (int i = 0; i < ProgressData.WeekArray.length; i++) {
-//            weekWiseList.add(new ProgressDataModel(
-//                    ProgressData.WeekArray[i],
-//                    ProgressData.daysArray[i],
-//                    ProgressData.id_[i]
-//            ));
-//        }
+//                }
 //
-//        adapter = new ProgressAdapter(weekWiseList);
-//        mProgressRecyclerView.setAdapter(adapter);
+//            }
 //
-   }
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+        //   Populate data of first horizontal cardview
+        weekWiseList = new ArrayList<ProgressDataModel>();
+        for (int i = 0; i <= Integer.valueOf(totalWeeks); i++) {
+            weekWiseList.add(new ProgressDataModel(
+                    ProgressData.WeekArray[i],
+                    ProgressData.imageArray[i],
+                    ProgressData.id_[i],
+                    ProgressData.day1,
+                    ProgressData.day2,
+                    ProgressData.day3,
+                    ProgressData.day4,
+                    ProgressData.day5,
+                    ProgressData.day6,
+                    ProgressData.day7,
+                    ProgressData.goForward
+
+            ));
+        }
+
+        adapter = new ProgressAdapter(getContext(),weekWiseList);
+        mProgressRecyclerView.setAdapter(adapter);
+
+    }
+
+    private void programProgress() {
+
+    }
 
 //    public class MyItemOnClickListener implements View.OnClickListener {
 //        private final ProgressFragment context;
